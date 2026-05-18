@@ -29,9 +29,6 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html, body { height: 100%; font-family: var(--font); background: var(--white); }
 
-    /* ============================================================
-       PASSWORD GATE
-       ============================================================ */
     #gate {
       position: fixed; inset: 0;
       background: var(--ebony);
@@ -67,184 +64,82 @@
     .gate-btn:hover { background: var(--mist); }
     .gate-error { font-size: 12px; color: var(--vermilion); min-height: 16px; text-align: center; }
 
-    /* ============================================================
-       DASHBOARD WRAPPER
-       ============================================================ */
     #dashboard { display: none; min-width: 1920px; }
     #dashboard.visible { display: block; }
 
-    /* ============================================================
-       HEADER  (Frame 1062: 1920×4948, content offset x:49, y:449)
-       ============================================================ */
     .dash-header {
       display: flex; align-items: flex-start; justify-content: space-between;
       padding: 40px 49px 32px 49px; background: var(--white);
     }
     .dash-title { font-size: 38px; font-weight: 400; color: var(--ebony); letter-spacing: -0.01em; line-height: 1.1; }
     .dash-period { font-size: 14px; color: var(--ebony); font-weight: 400; margin-top: 16px; }
-
-    /* ============================================================
-       MAIN CONTENT WRAPPER  (Frame 1187: VERTICAL gap 28px, x:49)
-       ============================================================ */
     .dash-content { padding: 0 49px 60px 49px; display: flex; flex-direction: column; gap: 28px; }
-
-    /* ============================================================
-       HORIZONTAL DIVIDER LINE  (used inside all sections)
-       ============================================================ */
     .hl       { height: 1px; background: var(--line-light); width: 100%; }
     .hl--dark { background: var(--line-dark); }
 
-    /* ============================================================
-       SECTION 1 — KPI CARDS
-       Figma: 3 cards × 588px wide, gap 29px, height 762px
-       Padding: top 40 / right 32 / bottom 29 / left 32
-       ============================================================ */
-    .kpi-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 29px;
-    }
-    .kpi-card {
-      background: #F1F1F1;
-      border-radius: 15px;
-      padding: 40px 32px 29px 32px;
-      min-height: 762px;
-      display: flex; flex-direction: column;
-    }
-    .kpi-card-title {
-      font-size: 13px; font-weight: 400;
-      color: var(--ebony); margin-bottom: 28px;
-    }
+    .kpi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 29px; }
+    .kpi-card { background: #F1F1F1; border-radius: 15px; padding: 40px 32px 29px 32px; min-height: 762px; display: flex; flex-direction: column; }
+    .kpi-card-title { font-size: 13px; font-weight: 400; color: var(--ebony); margin-bottom: 28px; }
     .kpi-rows { flex: 1; display: flex; flex-direction: column; }
-    .kpi-row {
-      display: flex; align-items: flex-start; justify-content: space-between;
-      padding: 16px 0;
-      border-top: 1px solid var(--line-light);
-    }
+    .kpi-row { display: flex; align-items: flex-start; justify-content: space-between; padding: 16px 0; border-top: 1px solid var(--line-light); }
     .kpi-period { font-size: 13px; color: var(--ebony); font-weight: 400; line-height: 1.4; }
     .kpi-value-group { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
     .kpi-value { font-size: 80px; font-weight: 400; color: var(--ebony); letter-spacing: -0.02em; line-height: 1; }
     .kpi-value.na { color: var(--taupe); }
-    .key-insights {
-      min-height: 90px;
-      padding-top: 24px;
-      font-size: 11px; color: var(--ebony); line-height: 1.6;
-    }
+    .key-insights { min-height: 90px; padding-top: 24px; font-size: 11px; color: var(--ebony); line-height: 1.6; }
     .key-insights-label { font-weight: 500; display: block; margin-bottom: 4px; }
-
-    /* Trend indicators */
     .trend { display: inline-flex; align-items: center; gap: 4px; font-size: 18px; font-weight: 500; }
     .trend.up   { color: var(--up); }
     .trend.down { color: var(--down); }
     .trend.neutral { color: var(--taupe); }
 
-    /* ============================================================
-       SECTION 2 — SHOWHOME VISITS  (Mist bg, radius 15, pad 30px)
-       ============================================================ */
     .section--showhome { background: var(--mist); border-radius: 15px; padding: 30px; }
     .showhome-title { font-size: 35px; font-weight: 400; color: var(--ebony); margin-bottom: 90px; }
-    .showhome-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 308px);
-      column-gap: 175px;
-      row-gap: 10px;
-    }
-    .showhome-cell {
-      width: 308px;
-      min-height: 120px;
-      padding-top: 15px;
-      border-top: 1px solid var(--line-light);
-      display: flex; flex-direction: row; align-items: flex-start; justify-content: space-between; gap: 8px;
-    }
+    .showhome-grid { display: grid; grid-template-columns: repeat(4, 370px); justify-content: space-between; row-gap: 10px; }
+    .showhome-cell { width: 370px; min-height: 120px; padding-top: 15px; border-top: 1px solid var(--line-light); display: flex; flex-direction: row; align-items: flex-start; justify-content: space-between; gap: 8px; }
     .showhome-cell--empty { border-top: none; }
     .showhome-location { font-size: 13px; color: var(--ebony); line-height: 1.4; flex: 1; }
-    .showhome-count { font-size: 56px; font-weight: 400; color: var(--ebony); letter-spacing: -0.03em; line-height: 1; flex-shrink: 0; }
+    .showhome-count { font-size: 70px; font-weight: 400; color: var(--ebony); letter-spacing: -0.03em; line-height: 1; flex-shrink: 0; }
     .showhome-footer { margin-top: 80px; font-size: 11px; color: var(--ebony); }
 
-    /* ============================================================
-       SECTION 3 — BUDGET TRACKING  (Racing Green, radius 15)
-       Padding: top 49 / right 30 / bottom 195 / left 30
-       ============================================================ */
     .section--budget { background: var(--racing-green); border-radius: 15px; padding: 49px 30px 80px 30px; }
-    /* First heading block: Budget tracking — April (pristine white) */
     .budget-eyebrow { font-size: 13px; font-weight: 400; color: var(--white); margin-bottom: 2px; }
     .budget-section-title { font-size: 35px; font-weight: 400; color: var(--white); margin-bottom: 40px; }
-    /* Second heading block: Budget tracking FY27 YTD (mid green) */
     .budget-eyebrow--ytd { font-size: 13px; font-weight: 400; color: var(--white); margin-bottom: 2px; }
     .budget-section-title--ytd { font-size: 35px; font-weight: 400; color: var(--white); margin-bottom: 40px; }
-    .budget-row {
-      display: grid; gap: 0;
-      padding: 0;
-      /* border-top removed — each cell carries its own column-width line */
-    }
-    .budget-row--actual  { grid-template-columns: repeat(3, 1fr); column-gap: 50px; }
-    .budget-row--planned { grid-template-columns: repeat(3, 1fr); column-gap: 50px; margin-top: 40px; }
-    /* Each cell: label/sub on left, large value on right, both top-aligned */
-    .budget-cell {
-      display: flex; flex-direction: row; align-items: flex-start; justify-content: space-between;
-      gap: 16px; padding: 20px 24px 20px 0;
-      border-top: 1px solid var(--line-dark); /* individual column-width line per cell */
-    }
+    .budget-row { display: grid; gap: 0; padding: 0; }
+    .budget-row--actual  { grid-template-columns: repeat(3, 700px); justify-content: space-between; }
+    .budget-row--planned { grid-template-columns: repeat(3, 700px); justify-content: space-between; margin-top: 40px; }
+    .budget-cell { display: flex; flex-direction: row; align-items: flex-start; justify-content: space-between; gap: 16px; padding: 20px 24px 20px 0; border-top: 1px solid var(--line-dark); }
     .budget-cell-text { flex: 1; }
     .budget-label    { font-size: 12px; font-weight: 400; color: var(--white); margin-bottom: 2px; }
     .budget-sublabel { font-size: 11px; color: rgba(255,255,255,0.65); margin-bottom: 0; }
     .budget-value    { font-size: 56px; font-weight: 400; color: var(--white); letter-spacing: -0.03em; line-height: 1; flex-shrink: 0; }
     .budget-value.dim { color: rgba(255,255,255,0.3); }
-
-    /* YTD sub-block */
     .budget-ytd-spacer { height: 111px; }
     .budget-ytd-grid { display: grid; grid-template-columns: repeat(4, 1fr); column-gap: 50px; row-gap: 0; }
     .budget-ytd-grid + .budget-ytd-grid { margin-top: 40px; }
-    .budget-ytd-cell {
-      display: flex; flex-direction: row; align-items: flex-start; justify-content: space-between;
-      gap: 12px; padding: 20px 24px 20px 0; border-top: 1px solid var(--line-dark);
-    }
+    .budget-ytd-cell { display: flex; flex-direction: row; align-items: flex-start; justify-content: space-between; gap: 12px; padding: 20px 24px 20px 0; border-top: 1px solid var(--line-dark); }
     .budget-ytd-label { font-size: 11px; color: var(--white); line-height: 1.3; flex: 1; }
     .budget-ytd-value { font-size: 40px; font-weight: 400; color: var(--white); letter-spacing: -0.02em; flex-shrink: 0; }
     .budget-ytd-value.dim { color: rgba(255,255,255,0.3); font-size: 32px; }
-    /* Prev-year row: all text and dividers in mid-green */
     .budget-ytd-grid--prev .budget-ytd-cell { border-top-color: rgba(131,140,115,0.4); }
     .budget-ytd-grid--prev .budget-ytd-label { color: var(--mid-green); }
     .budget-ytd-grid--prev .budget-ytd-value,
     .budget-ytd-grid--prev .budget-ytd-value.dim { color: var(--mid-green); font-size: 40px; }
 
-    /* ============================================================
-       SECTION 4 — LEAD CYCLE  (Ebony bg, radius 15)
-       Padding: top 49 / right 30 / bottom 38 / left 30
-       ============================================================ */
     .section--lead-cycle { background: var(--ebony); border-radius: 15px; padding: 49px 30px 38px 30px; }
     .lead-title { font-size: 20px; font-weight: 400; color: var(--white); margin-bottom: 60px; }
-    /* 3 cols × 519px, 50px gap — matches Figma Frame 1172 exactly */
-    .lead-grid { display: grid; grid-template-columns: repeat(3, 519px); column-gap: 50px; row-gap: 0; }
-    .lead-cell {
-      width: 519px;
-      padding-top: 20px;
-      border-top: 1px solid var(--line-dark);
-      display: flex; flex-direction: row; align-items: flex-start; justify-content: space-between; gap: 20px;
-    }
+    .lead-grid { display: grid; grid-template-columns: repeat(3, 519px); column-gap: 120px; row-gap: 0; }
+    .lead-cell { width: 519px; padding-top: 20px; border-top: 1px solid var(--line-dark); display: flex; flex-direction: row; align-items: flex-start; justify-content: space-between; gap: 20px; }
     .lead-cell-left  { flex: 1; }
     .lead-cell-right { display: flex; flex-direction: column; align-items: flex-end; gap: 20px; flex-shrink: 0; }
     .lead-period   { font-size: 13px; color: var(--white); font-weight: 400; margin-bottom: 4px; }
     .lead-sublabel { font-size: 11px; color: var(--white); }
     .lead-value    { font-size: 72px; font-weight: 400; color: var(--white); letter-spacing: -0.03em; line-height: 1; }
-    /* Bottom rule row: 3 cols matching lead-grid exactly */
-    .lead-updated {
-      margin-top: 90px;
-      display: grid;
-      grid-template-columns: repeat(3, 519px);
-      column-gap: 50px;
-    }
-    .lead-updated-cell {
-      border-top: 1px solid var(--line-dark);
-      padding-top: 16px;
-      font-size: 12px; color: var(--white);
-    }
+    .lead-updated { margin-top: 90px; display: grid; grid-template-columns: repeat(3, 519px); column-gap: 120px; }
+    .lead-updated-cell { border-top: 1px solid var(--line-dark); padding-top: 16px; font-size: 12px; color: var(--white); }
 
-    /* ============================================================
-       SECTION 5 — STICKY STOCK  (Mid Green, radius 15)
-       Padding: top 49 / right 672 / bottom 19 / left 27
-       Inner frame max-width 1118px
-       ============================================================ */
     .section--sticky { background: var(--mid-green); border-radius: 15px; padding: 49px 27px 19px 27px; }
     .sticky-wrapper { max-width: 1118px; }
     .sticky-eyebrow { font-size: 13px; font-weight: 400; color: var(--white); margin-bottom: 2px; }
@@ -264,9 +159,6 @@
 </head>
 <body>
 
-  <!-- ============================================================
-       PASSWORD GATE
-       ============================================================ -->
   <div id="gate">
     <svg width="240" height="30" viewBox="0 0 256 32" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M40.5845 11.5076V15.1883H35.9782L35.9632 15.1885C31.558 15.1885 29.3274 14.002 27.0421 12.0438L27.002 12.011L17.0685 4.02732L17.0541 4.0156C16.9416 3.92116 16.7946 3.86391 16.6339 3.86391C16.4831 3.86391 16.3465 3.91187 16.2371 3.99602L16.2139 4.01541L5.42425 12.7658L5.42076 12.7684C4.46074 13.6403 3.8611 14.8787 3.86173 16.2576C3.86237 16.263 3.86237 26.3695 3.86237 26.3695L0 26.3756V16.585L0.000770027 16.2523C0.000770056 13.6883 1.17851 11.3894 3.03447 9.82908L3.29716 9.61597L14.1161 0.835737L14.1373 0.819869C14.8273 0.30576 15.692 0 16.6307 0C17.6754 0 18.6286 0.378776 19.3512 1.00198L19.3729 1.01903L29.3373 9.01017L29.5293 9.16638C31.1142 10.5039 32.4798 11.5076 36.1242 11.5076H40.5845ZM46.671 26.3285V11.5012H50.8795V13.8145H50.9631C51.9107 12.0587 53.3322 11.0831 55.4224 11.0831C57.3733 11.0831 58.7391 12.0587 59.4915 13.8981H59.5473C60.7736 11.9193 62.3901 11.0831 64.2574 11.0831C67.5462 11.0831 69.2459 13.2571 69.2459 16.5458V26.3285H64.8985V17.2704C64.8985 15.6539 64.1181 14.6785 62.6967 14.6785C61.136 14.6785 60.1605 15.9884 60.1605 17.8837V26.3285H55.7848V17.2704C55.7848 15.6539 55.0601 14.6785 53.6108 14.6785C52.0779 14.6785 51.0467 15.9884 51.0467 17.8837V26.3285H46.671ZM71.5484 9.41092V5.59261H75.9794V9.41092H71.5484ZM71.5763 26.3285V11.5012H75.9514V26.3285H71.5763ZM87.9694 26.3285L84.0953 19.8624L82.6182 21.3953V26.3285H78.2981V5.59261H82.6182V12.0587C82.6182 14.2325 82.5344 15.877 82.4786 16.8245L87.3557 11.5012H92.4283L87.1331 16.9918L93.042 26.3285H87.9694ZM100.065 26.7744C95.2156 26.7744 92.2337 23.3742 92.2337 18.9427C92.2337 14.4834 95.3273 11.0831 99.8422 11.0831C101.96 11.0831 103.632 11.7799 104.943 12.9784C106.614 14.5949 107.367 17.1033 107.339 20.0297H96.525C96.8043 22.2594 98.0025 23.5971 100.121 23.5971C101.487 23.5971 102.35 23.0676 102.824 22.1479H107.06C106.308 24.7677 103.883 26.7744 100.065 26.7744ZM99.8422 14.1768C97.8353 14.1768 96.8323 15.4589 96.5529 17.4934H102.88C102.74 15.431 101.57 14.1768 99.8422 14.1768ZM116.007 31.4846C111.938 31.4846 109.318 29.7844 108.872 26.858H113.136C113.415 27.7499 114.251 28.363 115.951 28.363C118.013 28.363 119.045 27.304 119.045 25.4924V25.1858C119.045 24.4332 119.073 23.7365 119.128 23.2348H119.017C118.153 24.6841 116.843 25.4087 115.003 25.4087C111.575 25.4087 108.538 22.8725 108.538 18.3853C108.538 14.0654 111.129 11.0831 114.781 11.0831C116.788 11.0831 118.209 11.7521 119.045 13.3964H119.101V11.5012H123.281V25.0185C123.281 27.2203 122.557 28.8089 121.358 29.868C120.076 30.9829 118.181 31.4846 116.007 31.4846ZM115.979 22.1199C118.209 22.1199 119.184 20.4477 119.184 18.2459C119.184 16.0441 118.097 14.3998 115.951 14.3998C114.028 14.3998 112.83 15.9048 112.83 18.2738C112.83 20.6149 114.028 22.1199 115.979 22.1199ZM130.137 11.5012V14.149H130.22C131.168 12.0865 132.506 11.2504 134.346 11.2504C134.764 11.2504 135.07 11.2782 135.265 11.3619V15.1802H135.154C134.847 15.1244 134.541 15.0966 134.234 15.0966C131.865 15.0687 130.304 16.5458 130.304 19.4444V26.3285H125.929V11.5012H130.137ZM143.453 26.7744C138.604 26.7744 135.622 23.3742 135.622 18.9427C135.622 14.4834 138.716 11.0831 143.23 11.0831C145.348 11.0831 147.021 11.7799 148.331 12.9784C150.003 14.5949 150.755 17.1033 150.727 20.0297H139.914C140.193 22.2594 141.391 23.5971 143.509 23.5971C144.875 23.5971 145.738 23.0676 146.212 22.1479H150.449C149.696 24.7677 147.271 26.7744 143.453 26.7744ZM143.23 14.1768C141.224 14.1768 140.221 15.4589 139.942 17.4934H146.268C146.129 15.431 144.958 14.1768 143.23 14.1768ZM159.936 26.7744C155.086 26.7744 152.104 23.3742 152.104 18.9427C152.104 14.4834 155.198 11.0831 159.713 11.0831C161.831 11.0831 163.503 11.7799 164.813 12.9784C166.486 14.5949 167.238 17.1033 167.21 20.0297H156.396C156.675 22.2594 157.873 23.5971 159.992 23.5971C161.357 23.5971 162.222 23.0676 162.696 22.1479H166.932C166.179 24.7677 163.754 26.7744 159.936 26.7744ZM159.713 14.1768C157.707 14.1768 156.703 15.4589 156.424 17.4934H162.751C162.612 15.431 161.441 14.1768 159.713 14.1768ZM173.016 11.5012V14.149H173.1C174.047 12.0865 175.385 11.2504 177.224 11.2504C177.642 11.2504 177.949 11.2782 178.143 11.3619V15.1802H178.032C177.726 15.1244 177.419 15.0966 177.112 15.0966C174.743 15.0687 173.182 16.5458 173.182 19.4444V26.3285H168.807V11.5012H173.016ZM180.596 26.3285V6.40088H182.324V14.121H182.38C183.356 12.6718 184.916 11.6127 187.202 11.6127C189.877 11.6127 191.8 13.2013 191.8 16.0999V26.3285H190.072V16.2672C190.072 14.0932 188.818 13.0898 186.784 13.0898C184.331 13.0898 182.324 14.8178 182.324 17.1869V26.3285H180.596ZM200.351 25.2415C203.556 25.2415 205.228 22.5102 205.228 19.1378C205.228 15.7655 203.556 13.0342 200.351 13.0342C197.117 13.0342 195.446 15.7655 195.446 19.1378C195.446 22.5102 197.117 25.2415 200.351 25.2415ZM200.351 26.6908C196.198 26.6908 193.661 23.4299 193.661 19.1378C193.661 14.8458 196.198 11.5848 200.351 11.5848C204.503 11.5848 206.984 14.8458 206.984 19.1378C206.984 23.4299 204.503 26.6908 200.351 26.6908ZM208.957 26.3285V11.9193H210.685V14.0932H210.74C211.66 12.6439 213.053 11.6127 215.116 11.6127C216.872 11.6127 218.378 12.5045 218.962 14.2325H219.018C219.965 12.5881 221.61 11.6127 223.645 11.6127C226.097 11.6127 227.993 13.2013 227.993 16.0999V26.3285H226.292V16.2392C226.292 14.0932 225.01 13.0898 223.255 13.0898C221.136 13.0898 219.353 14.5949 219.353 17.1589V26.3285H217.624V16.2392C217.624 14.0932 216.399 13.0898 214.726 13.0898C212.663 13.0898 210.685 14.8178 210.685 17.1589V26.3285H208.957ZM236.663 26.6908C232.343 26.6908 229.946 23.4578 229.946 19.1378C229.946 14.8178 232.538 11.5848 236.523 11.5848C241.15 11.5848 242.739 15.4031 242.711 19.4444H231.73C231.814 22.6774 233.375 25.2136 236.663 25.2136C239.06 25.2136 240.314 23.9316 240.871 21.9806H242.544C241.93 24.8234 239.896 26.6908 236.663 26.6908ZM231.758 18.0787H240.899C240.816 15.2359 239.478 13.0062 236.523 13.0062C233.597 13.0062 232.064 15.208 231.758 18.0787ZM250.041 26.7187C246.195 26.7187 244.244 24.6283 244.077 21.8413H245.832C246.083 24.2661 247.755 25.2415 250.069 25.2415C252.466 25.2415 253.719 24.1267 253.719 22.4545C253.719 20.8658 252.828 20.3363 249.873 19.6673C246.947 18.9985 244.606 18.3017 244.606 15.5146C244.606 13.1177 246.669 11.6127 249.623 11.6127C253.051 11.6127 254.639 13.3407 254.974 15.877H253.246C253.051 14.0096 251.769 13.0342 249.623 13.0342C247.393 13.0342 246.334 14.0932 246.334 15.431C246.334 17.0754 247.7 17.4655 250.459 18.1066C253.357 18.7198 255.448 19.4444 255.448 22.4265C255.448 24.9907 253.385 26.7187 250.041 26.7187Z" fill="#FFFFFF"/>
@@ -282,13 +174,8 @@
     </div>
   </div>
 
-  <!-- ============================================================
-       DASHBOARD
-       ============================================================ -->
   <div id="data-status"></div>
   <div id="dashboard">
-
-    <!-- HEADER -->
     <header class="dash-header">
       <div>
         <div class="dash-title">MGH Marketing Dashboard</div>
@@ -299,59 +186,41 @@
       </svg>
     </header>
 
-    <!-- MAIN CONTENT -->
     <div class="dash-content">
-
-      <!-- ── SECTION 1: KPI CARDS ── -->
-      <div class="kpi-grid" id="kpi-grid"><!-- rendered by JS --></div>
-
-      <!-- ── SECTION 2: SHOWHOME VISITS ── -->
+      <div class="kpi-grid" id="kpi-grid"></div>
       <div class="section--showhome">
         <div class="showhome-title" id="showhome-title">Canterbury — Showhome visits</div>
-        <div class="showhome-grid" id="showhome-grid"><!-- rendered by JS --></div>
+        <div class="showhome-grid" id="showhome-grid"></div>
         <div class="showhome-footer" id="showhome-footer"></div>
       </div>
-
-      <!-- ── SECTION 3: BUDGET ── -->
       <div class="section--budget">
         <div class="budget-eyebrow">Budget tracking</div>
         <div class="budget-section-title" id="budget-month-title">— Month</div>
-
-        <div class="budget-row budget-row--actual" id="budget-actual-row"><!-- rendered by JS --></div>
-        <div class="budget-row budget-row--planned" id="budget-planned-row"><!-- rendered by JS --></div>
-
+        <div class="budget-row budget-row--actual" id="budget-actual-row"></div>
+        <div class="budget-row budget-row--planned" id="budget-planned-row"></div>
         <div class="budget-ytd-spacer"></div>
         <div class="budget-eyebrow--ytd">Budget tracking</div>
         <div class="budget-section-title--ytd" id="budget-ytd-title">FY27 YTD</div>
-        <div class="budget-ytd-grid" id="budget-ytd-current"><!-- rendered by JS --></div>
-        <div class="budget-ytd-grid budget-ytd-grid--prev" id="budget-ytd-prev"><!-- rendered by JS --></div>
+        <div class="budget-ytd-grid" id="budget-ytd-current"></div>
+        <div class="budget-ytd-grid budget-ytd-grid--prev" id="budget-ytd-prev"></div>
       </div>
-
-      <!-- ── SECTION 4: LEAD CYCLE ── -->
       <div class="section--lead-cycle">
         <div class="lead-title">Lead cycle</div>
-        <div class="lead-grid" id="lead-grid"><!-- rendered by JS --></div>
+        <div class="lead-grid" id="lead-grid"></div>
         <div class="lead-updated" id="lead-updated"></div>
       </div>
-
-      <!-- ── SECTION 5: STICKY STOCK ── -->
       <div class="section--sticky">
         <div class="sticky-wrapper">
           <div class="sticky-eyebrow">Sticky stock side quests</div>
           <div class="sticky-title" id="sticky-title">— Month</div>
-          <div class="sticky-grid" id="sticky-grid"><!-- rendered by JS --></div>
+          <div class="sticky-grid" id="sticky-grid"></div>
           <div class="sticky-updated" id="sticky-updated"></div>
         </div>
       </div>
-
     </div>
-  </div><!-- /#dashboard -->
-
+  </div>
 
   <script>
-    // ================================================================
-    // PASSWORD  — change DASHBOARD_PASSWORD to update access
-    // ================================================================
     const DASHBOARD_PASSWORD = 'Mik3gr33rhom3s!';
     const PUBLISHED_ID = '2PACX-1vRCWeTy4CqLDHzmMnOPhONAbavyv-PPqnlE5mD71oXY7Y4nPFrZKKURqJ306WzKdhTV73yiwp_NmG_l';
     const SHEET_ID     = '1pvB3glqoum4e2U6cmOfdielSyL7fJAQky1Hj4mGIIZM';
@@ -381,13 +250,9 @@
     }
     gateInput.addEventListener('keydown', e => { if (e.key === 'Enter') checkPassword(); gateError.textContent = ''; });
 
-    // ================================================================
-    // TREND HELPER
-    // pct: number (percent change) or null
-    // isPositiveGood: true = up green / down red; false = down green / up red
-    // ================================================================
     function trend(pct, isPositiveGood = true) {
       if (pct === null || pct === undefined) return '';
+      if (pct === 0) return `<span class="trend neutral">— 0.0%</span>`;
       const isUp   = pct >= 0;
       const isGood = isPositiveGood ? isUp : !isUp;
       const cls    = isGood ? 'up' : 'down';
@@ -398,122 +263,82 @@
 
     function fmtNum(val) {
       if (val === 'NA' || val === '' || val == null) return val;
-      // Strip existing commas, check if it's a number
       var stripped = String(val).replace(/,/g, '').trim();
       var num = parseFloat(stripped);
-      if (isNaN(num)) return val; // not a number — return as-is (e.g. text values)
-      // Format with commas, no decimals for whole numbers
+      if (isNaN(num)) return val;
       return Number.isInteger(num)
         ? num.toLocaleString('en-NZ')
         : num.toLocaleString('en-NZ', {maximumFractionDigits: 2});
     }
 
-    // ================================================================
-    // DASHBOARD DATA
-    // ----------------------------------------------------------------
-    // All values from the Figma doc. Replace with live API values
-    // as each data source is connected.
-    // ================================================================
     const DATA = {
-
       period: 'April 2026',
-
-      // ── KPI Cards ──
       kpi: [
-        {
-          title: 'Lead enquiries',
-          rows: [
-            { period: 'March 2026',    value: '805',  pct: 0.24  },
-            { period: 'Last month',    value: '803',  pct: 0.24  },
-            { period: 'March 2025',    value: 'NA',   pct: 0.24  },
-          ],
-          insights: {
-            label: 'March 2026 Leads by Source',
-            text:  'Organic Search 19 / Paid Search 32 / Organic Social 1 / Referrals 3 / Direct Traffic 113 / Offline sources 30 / Paid Social 313',
-          },
-        },
-        {
-          title: 'Website traffic',
-          rows: [
-            { period: 'April 2026',  value: '26,381', pct: -0.3  },
-            { period: 'Last month',  value: '33,085', pct: 32.7  },
-            { period: 'April 2025',  value: '26,465', pct: 0.24  },
-          ],
-          insights: {
-            label: 'Key insights',
-            text:  'The March promo campaign resulted in an additional 6,899 unique visitor. Average time on site was 2.27mins with a reduced bounce rate of 12.49%.',
-          },
-        },
-        {
-          title: 'Guide downloads',
-          rows: [
-            { period: 'March 2026\n— Turn Key Homes',        value: 'NA', pct: 0 },
-            { period: 'March 2026\n— Design & Build',        value: 'NA', pct: 0 },
-            { period: 'March 2026\n— First Home Buyer Guide', value: 'NA', pct: 0 },
-          ],
-          insights: {
-            label: 'Key insight',
-            text:  '',
-          },
-        },
+        { title: 'Lead enquiries', rows: [
+            { period: 'March 2026', value: '805', pct: 0.24 },
+            { period: 'Last month', value: '803', pct: 0.24 },
+            { period: 'March 2025', value: 'NA',  pct: 0.24 },
+          ], insights: { label: 'March 2026 Leads by Source', text: 'Organic Search 19 / Paid Search 32 / Organic Social 1 / Referrals 3 / Direct Traffic 113 / Offline sources 30 / Paid Social 313' } },
+        { title: 'Website traffic', rows: [
+            { period: 'April 2026', value: '26,381', pct: -0.3 },
+            { period: 'Last month', value: '33,085', pct: 32.7 },
+            { period: 'April 2025', value: '26,465', pct: 0.24 },
+          ], insights: { label: 'Key insights', text: 'The March promo campaign resulted in an additional 6,899 unique visitor. Average time on site was 2.27mins with a reduced bounce rate of 12.49%.' } },
+        { title: 'Guide downloads', rows: [
+            { period: 'March 2026\n— Turn Key Homes',         value: 'NA', pct: 0 },
+            { period: 'March 2026\n— Design & Build',         value: 'NA', pct: 0 },
+            { period: 'March 2026\n— First Home Buyer Guide',  value: 'NA', pct: 0 },
+          ], insights: { label: 'Key insight', text: '' } },
       ],
-
-      // ── Showhome Visits ──
-      showhomeRegion:  'Canterbury',
-      showhomeFooter:  'Last updated 23/04/2025',
+      showhomeRegion: 'Canterbury',
+      showhomeFooter: 'Last updated 23/04/2025',
       showhomes: [
-        { location: '8 Doris Lusk Street',       visits: 0  },
-        { location: '15 Oakbridge Boulevard',    visits: 13 },
-        { location: '1 Atawhai Lane',            visits: 0  },
-        { location: '1 Malaga Crescent',         visits: 1  },
-        { location: '121 Claridges Road',        visits: 6  },
-        { location: '4/9 Ayr Street',            visits: 5  },
-        { location: '242 Armagh Street',         visits: 12 },
-        { location: 'Beach Grove Open Home',     visits: 3  },
-        { location: '35 Arbor Green Boulevard',  visits: 6  },
-        { location: '193 Lincoln-Rolleston Road',visits: 9  },
-        { location: '',                          visits: null },
-        { location: '',                          visits: null },
-        { location: 'Beach Grove Showhome',      visits: 1  },
-        { location: 'Bellgrove Showhomes',       visits: 15 },
-        { location: '',                          visits: null },
-        { location: '',                          visits: null },
+        { location: '8 Doris Lusk Street',        visits: 0  },
+        { location: '15 Oakbridge Boulevard',     visits: 13 },
+        { location: '1 Atawhai Lane',             visits: 0  },
+        { location: '1 Malaga Crescent',          visits: 1  },
+        { location: '121 Claridges Road',         visits: 6  },
+        { location: '4/9 Ayr Street',             visits: 5  },
+        { location: '242 Armagh Street',          visits: 12 },
+        { location: 'Beach Grove Open Home',      visits: 3  },
+        { location: '35 Arbor Green Boulevard',   visits: 6  },
+        { location: '193 Lincoln-Rolleston Road', visits: 9  },
+        { location: '', visits: null },
+        { location: '', visits: null },
+        { location: 'Beach Grove Showhome',       visits: 1  },
+        { location: 'Bellgrove Showhomes',        visits: 15 },
+        { location: '', visits: null },
+        { location: '', visits: null },
       ],
-
-      // ── Budget ──
       budgetMonth: '— April',
-      budgetActual: [
-        { label: 'Media spend',    sub: '— Actual',  value: '92.5K'  },
-        { label: 'Agency fees',    sub: '— Actual',  value: '$66.4K' },
-        { label: 'Special projects', sub: '',        value: 'N/A'    },
+      budgetActual:  [
+        { label: 'Media spend',     sub: '— Actual',  value: '0.00' },
+        { label: 'Agency fees',     sub: '— Actual',  value: '0.00' },
+        { label: 'Special projects',sub: '',           value: '0.00' },
       ],
       budgetPlanned: [
-        { label: 'Media spend',    sub: '— Planned', value: 'XXK',    dim: true },
-        { label: 'Agency fees',    sub: '— Planned', value: '$78.8K', dim: false },
-        { label: '',               sub: '',           value: '',       dim: true },
+        { label: 'Media spend',     sub: '— Planned', value: '0.00', dim: true  },
+        { label: 'Agency fees',     sub: '— Planned', value: '0.00', dim: false },
+        { label: '',                sub: '',           value: '',     dim: true  },
       ],
       budgetYTDCurrent: [
-        { label: 'April 2026',          value: 'XXK',  dim: false },
-        { label: 'May 2026',            value: 'TBD',  dim: false },
-        { label: 'June 2026',           value: 'TBD',  dim: false },
-        { label: 'Apr 2026\n[Forecast]',value: '455K', dim: false },
+        { label: 'April 2026',           value: '0.00', dim: false },
+        { label: 'May 2026',             value: '0.00', dim: false },
+        { label: 'June 2026',            value: '0.00', dim: false },
+        { label: 'Apr 2026\n[Forecast]', value: '0.00', dim: false },
       ],
       budgetYTDPrev: [
-        { label: 'April 2025',          value: 'TBD', dim: true },
-        { label: 'May 2025',            value: 'TBD', dim: true },
-        { label: 'June 2025',           value: 'TBD', dim: true },
-        { label: 'Apr 2025\n[Forecast]',value: 'TBD', dim: true },
+        { label: 'April 2025',           value: '0.00', dim: true },
+        { label: 'May 2025',             value: '0.00', dim: true },
+        { label: 'June 2025',            value: '0.00', dim: true },
+        { label: 'Apr 2025\n[Forecast]', value: '0.00', dim: true },
       ],
-
-      // ── Lead Cycle ──
       leadUpdated: 'Last updated 12/02/2025',
       leadCycle: [
         { period: 'March 2026', sub: 'Average time from lead > sale', days: 45, pct: -2.5 },
         { period: 'Feb 2026',   sub: 'Average time from lead > sale', days: 41, pct: 12.5 },
         { period: 'Jan 2026',   sub: 'Average time from lead > sale', days: 52, pct: 2.5  },
       ],
-
-      // ── Sticky Stock ──
       stickyMonth:   '— March',
       stickyUpdated: 'Last updated 12/02/2025',
       stickyStock: [
@@ -521,11 +346,6 @@
         { label: 'Beech Grove',  value: '27x homes', action: 'Mini campaign live; monitor and optimise' },
       ],
     };
-
-
-    // ================================================================
-    // GOOGLE SHEETS LIVE DATA FETCH (JSONP — works from local files)
-    // ================================================================
 
     function fetchTab(tabName) {
       return new Promise(function(resolve, reject) {
@@ -537,46 +357,36 @@
           reject(new Error('Timeout fetching tab: ' + tabName));
         }, 10000);
         window[cbName] = function(data) {
-          clearTimeout(timer);
-          delete window[cbName];
+          clearTimeout(timer); delete window[cbName];
           if (script.parentNode) script.parentNode.removeChild(script);
           resolve(data.table.rows);
         };
         script.onerror = function() {
-          clearTimeout(timer);
-          delete window[cbName];
+          clearTimeout(timer); delete window[cbName];
           reject(new Error('Failed to load tab: ' + tabName));
         };
         script.src = 'https://docs.google.com/spreadsheets/d/' + SHEET_ID +
           '/gviz/tq?tqx=out:json;responseHandler:' + cbName +
-          '&sheet=' + encodeURIComponent(tabName) +
-          '&cachebust=' + Date.now();
+          '&sheet=' + encodeURIComponent(tabName) + '&cachebust=' + Date.now();
         document.head.appendChild(script);
       });
     }
 
     function cell(rows, rowIdx, colIdx) {
-      try { var v = rows[rowIdx].c[colIdx]; return v && v.v !== null ? String(v.v) : ''; }
-      catch(e) { return ''; }
+      try { var v = rows[rowIdx].c[colIdx]; return v && v.v !== null ? String(v.v) : ''; } catch(e) { return ''; }
     }
-
-    // Parse a cell as a percentage number (handles decimals like 0.24 AND strings like "-2.5%")
     function cellPct(rows, rowIdx, colIdx) {
       try {
         var v = rows[rowIdx].c[colIdx];
         if (!v || v.v === null) return 0;
         var s = String(v.v);
-        if (s.indexOf('%') >= 0) return parseFloat(s); // already a % string e.g. "-2.5%"
-        return Number(v.v) * 100;                       // decimal e.g. 0.24 → 24
+        if (s.indexOf('%') >= 0) return parseFloat(s);
+        return Number(v.v) * 100;
       } catch(e) { return 0; }
     }
-
     function cellNum(rows, rowIdx, colIdx) {
-      try { var v = rows[rowIdx].c[colIdx]; return v && v.v !== null ? Number(v.v) : 0; }
-      catch(e) { return 0; }
+      try { var v = rows[rowIdx].c[colIdx]; return v && v.v !== null ? Number(v.v) : 0; } catch(e) { return 0; }
     }
-
-    // Find the first row whose cell at colIdx contains searchText (case-insensitive)
     function findRow(rows, searchText, colIdx) {
       colIdx = colIdx || 0;
       var lower = searchText.toLowerCase();
@@ -587,35 +397,14 @@
       return -1;
     }
 
-    // Find the insights label/text rows after a given start index
-    function findInsights(rows, afterIdx) {
-      var labelRow = -1, textRow = -1;
-      for (var i = afterIdx; i < Math.min(afterIdx + 8, rows.length); i++) {
-        var v = cell(rows, i, 0);
-        if (v === 'Insights Label') labelRow = i;
-        if (v === 'Insights Text')  textRow  = i;
-      }
-      return {
-        label: labelRow >= 0 ? cell(rows, labelRow, 1) : '',
-        text:  textRow  >= 0 ? cell(rows, textRow,  1) : '',
-      };
-    }
-
     async function buildDataFromSheet() {
       var tabs = await Promise.all([
-        fetchTab('Config'),
-        fetchTab('KPI'),
-        fetchTab('Showhome Visits'),
-        fetchTab('Budget Tracking'),
-        fetchTab('Lead Cycle'),
-        fetchTab('Sticky Stock'),
+        fetchTab('Config'), fetchTab('KPI'), fetchTab('Showhome Visits'),
+        fetchTab('Budget Tracking'), fetchTab('Lead Cycle'), fetchTab('Sticky Stock'),
       ]);
       window._rawTabs = tabs;
-      var cfg = tabs[0], kpi = tabs[1], show = tabs[2],
-          bud = tabs[3], lead = tabs[4], sticky = tabs[5];
+      var cfg = tabs[0], kpi = tabs[1], show = tabs[2], bud = tabs[3], lead = tabs[4], sticky = tabs[5];
 
-      // ── Config ──
-      // Find rows by their Setting name in col 0
       var cfgPeriod   = findRow(cfg, 'Dashboard Period Label');
       var cfgRegion   = findRow(cfg, 'Showhome Region');
       var cfgBudMth   = findRow(cfg, 'Budget Month Label');
@@ -624,14 +413,10 @@
       var cfgLeadFoot = findRow(cfg, 'Lead Cycle Footer');
       var cfgStkFoot  = findRow(cfg, 'Sticky Stock Footer');
 
-      // ── KPI — find each section by its header text ──
-      // Find all "Insights Label" rows — one per KPI section
       var insightRows = [];
       for (var ii = 0; ii < kpi.length; ii++) {
         if (cell(kpi, ii, 0).toLowerCase().indexOf('insights label') >= 0) insightRows.push(ii);
       }
-
-      // For each insights marker, identify the section type by scanning backwards for a known title
       function identifySection(insRow) {
         for (var i = insRow; i >= Math.max(0, insRow - 10); i--) {
           var v = cell(kpi, i, 0).toLowerCase();
@@ -641,8 +426,6 @@
         }
         return 'unknown';
       }
-
-      // Extract 3 data rows just above an insights row
       function extractSection(insRow, isGuide) {
         var rows = [0, 1, 2].map(function(i) {
           var r = insRow - 3 + i;
@@ -654,17 +437,11 @@
             return { period: cell(kpi, r, 0), value: cell(kpi, r, 1), pct: cellNum(kpi, r, 2) };
           }
         });
-        return {
-          rows: rows,
-          insights: { label: cell(kpi, insRow, 1), text: cell(kpi, insRow + 1, 1) }
-        };
+        return { rows: rows, insights: { label: cell(kpi, insRow, 1), text: cell(kpi, insRow + 1, 1) } };
       }
-
       var leadEnq  = { rows: [], insights: { label: '', text: '' } };
       var webTraff = { rows: [], insights: { label: '', text: '' } };
       var guideDl  = { rows: [], insights: { label: '', text: '' } };
-
-      // Map by position if title lookup fails — from Drive we know order is: traffic, lead, guide
       var sectionOrder = ['lead', 'traffic', 'guide'];
       insightRows.forEach(function(insRow, idx) {
         var type = identifySection(insRow);
@@ -674,8 +451,6 @@
         if (type === 'guide')   guideDl  = extractSection(insRow, true);
       });
 
-      // ── Budget — find each section by header ──
-      // Budget: find actual/planned by searching sub-label col (col1) for keyword
       function budRows(subKeyword, count, labelCol, subCol, valCol) {
         var firstRow = findRow(bud, subKeyword, subCol);
         if (firstRow < 0) return [];
@@ -688,50 +463,33 @@
         }
         return result;
       }
-
-      // YTD: collect all rows whose col0 contains the given year string
       function ytdByYear(yearStr, dim) {
         var result = [];
         for (var i = 0; i < bud.length; i++) {
-          var lbl = cell(bud, i, 0);
-          var val = cell(bud, i, 1);
-          if (lbl && lbl.indexOf(yearStr) >= 0 && val && val !== '') {
-            result.push({ label: lbl, value: val, dim: dim });
-          }
+          var lbl = cell(bud, i, 0), val = cell(bud, i, 1);
+          if (lbl && lbl.indexOf(yearStr) >= 0 && val && val !== '') result.push({ label: lbl, value: val, dim: dim });
         }
         return result;
       }
-
-      var actuals  = budRows('Actual',  3, 0, 1, 2);
-      var planned  = budRows('Planned', 3, 0, 1, 2);
+      var actuals = budRows('Actual', 3, 0, 1, 2);
+      var planned = budRows('Planned', 3, 0, 1, 2);
       if (planned[0]) planned[0].dim = planned[0].value.indexOf('X') >= 0;
       if (planned[1]) planned[1].dim = false;
       if (planned[2]) planned[2].dim = true;
-      var ytdCurr  = ytdByYear('2026', false);
-      var ytdPrev  = ytdByYear('2025', true);
+      var ytdCurr = ytdByYear('2026', false);
+      var ytdPrev = ytdByYear('2025', true);
 
-      // ── Lead Cycle — scan for rows with a positive days value and a year in col0 ──
       var leadCycleRows = [];
       for (var lci = 0; lci < lead.length; lci++) {
-        var lcDays = cellNum(lead, lci, 2);
-        var lcPeriod = cell(lead, lci, 0);
-        if (lcDays > 0 && (lcPeriod.indexOf('202') >= 0 || lcPeriod.indexOf('201') >= 0)) {
-          leadCycleRows.push(lci);
-        }
+        var lcDays = cellNum(lead, lci, 2), lcPeriod = cell(lead, lci, 0);
+        if (lcDays > 0 && (lcPeriod.indexOf('202') >= 0 || lcPeriod.indexOf('201') >= 0)) leadCycleRows.push(lci);
       }
-
-      // ── Sticky Stock — same: data starts at row 0 ──
       var stickyHdr = findRow(sticky, 'Development');
       var stickyStart = stickyHdr >= 0 ? stickyHdr + 1 : 0;
-
-      // ── Showhome — map by slot number (col0 = 1–16) to handle any header rows ──
       var showSlotMap = {};
       for (var si = 0; si < show.length; si++) {
-        var slotVal = cell(show, si, 0);
-        var slotNum = parseFloat(slotVal);
-        if (!isNaN(slotNum) && slotNum >= 1 && slotNum <= 16) {
-          showSlotMap[slotNum] = si;
-        }
+        var slotNum = parseFloat(cell(show, si, 0));
+        if (!isNaN(slotNum) && slotNum >= 1 && slotNum <= 16) showSlotMap[slotNum] = si;
       }
 
       return {
@@ -742,33 +500,25 @@
         showhomeFooter: cfgShFoot   >= 0 ? cell(cfg, cfgShFoot,   1) : DATA.showhomeFooter,
         leadUpdated:    cfgLeadFoot >= 0 ? cell(cfg, cfgLeadFoot, 1) : DATA.leadUpdated,
         stickyUpdated:  cfgStkFoot  >= 0 ? cell(cfg, cfgStkFoot,  1) : DATA.stickyUpdated,
-
         kpi: [
           { title: 'Lead enquiries',  rows: leadEnq.rows,  insights: leadEnq.insights  },
           { title: 'Website traffic', rows: webTraff.rows, insights: webTraff.insights },
           { title: 'Guide downloads', rows: guideDl.rows,  insights: guideDl.insights  },
         ],
-
         showhomes: Array.from({length: 16}, function(_, i) {
           var slot = i + 1;
           if (!(slot in showSlotMap)) return { location: '', visits: null };
           var r = showSlotMap[slot];
-          var loc = cell(show, r, 1);
           var vis = cell(show, r, 2);
-          return { location: loc, visits: (vis === '' || vis === '—') ? null : Number(vis) };
+          return { location: cell(show, r, 1), visits: (vis === '' || vis === '—') ? null : Number(vis) };
         }),
-
-        budgetActual:    actuals,
-        budgetPlanned:   planned,
-        budgetYTDCurrent: ytdCurr,
-        budgetYTDPrev:    ytdPrev,
-
+        budgetActual: actuals, budgetPlanned: planned,
+        budgetYTDCurrent: ytdCurr, budgetYTDPrev: ytdPrev,
         leadCycle: [0, 1, 2].map(function(i) {
           if (i >= leadCycleRows.length) return { period: '', sub: '', days: 0, pct: 0 };
           var r = leadCycleRows[i];
           return { period: cell(lead, r, 0), sub: cell(lead, r, 1), days: cellNum(lead, r, 2), pct: cellPct(lead, r, 3) };
         }),
-
         stickyStock: [0, 1].map(function(i) {
           var r = stickyStart + i;
           return { label: cell(sticky, r, 0), value: cell(sticky, r, 1), action: cell(sticky, r, 2) };
@@ -780,8 +530,7 @@
       var bar = document.getElementById('data-status');
       if (!bar) return;
       bar.innerHTML = msg + ' &nbsp;&nbsp;<button onclick="if(window._rawTabs)showDebug(window._rawTabs)" style="background:rgba(255,255,255,0.2);border:none;color:#fff;padding:2px 10px;cursor:pointer;border-radius:3px;font-size:11px;vertical-align:middle">🔍 Debug data</button>';
-      bar.style.background = colour;
-      bar.style.display = 'block';
+      bar.style.background = colour; bar.style.display = 'block';
     }
 
     function showDebug(tabs) {
@@ -793,8 +542,7 @@
         html += '<table style="border-collapse:collapse;margin-bottom:12px">';
         html += '<tr><th style="padding:2px 8px;border:1px solid #36453D;color:#B6AEA5">row</th><th style="padding:2px 8px;border:1px solid #36453D;color:#B6AEA5">col0</th><th style="padding:2px 8px;border:1px solid #36453D;color:#B6AEA5">col1</th><th style="padding:2px 8px;border:1px solid #36453D;color:#B6AEA5">col2</th><th style="padding:2px 8px;border:1px solid #36453D;color:#B6AEA5">col3</th></tr>';
         rows.slice(0, 35).forEach(function(row, ri) {
-          html += '<tr>';
-          html += '<td style="padding:2px 8px;border:1px solid #36453D;color:#B6AEA5">' + ri + '</td>';
+          html += '<tr><td style="padding:2px 8px;border:1px solid #36453D;color:#B6AEA5">' + ri + '</td>';
           [0,1,2,3].forEach(function(ci) {
             var v = row.c && row.c[ci] && row.c[ci].v !== null ? String(row.c[ci].v) : '';
             html += '<td style="padding:2px 8px;border:1px solid #36453D;max-width:220px;overflow:hidden;white-space:nowrap">' + v.substring(0,60) + '</td>';
@@ -804,37 +552,24 @@
         html += '</table>';
       });
       html += '</div>';
-      var div = document.createElement('div');
-      div.innerHTML = html;
+      var div = document.createElement('div'); div.innerHTML = html;
       document.body.appendChild(div.firstChild);
     }
 
     async function loadAndRender() {
-      var loader = document.getElementById('sheet-loader');
-      if (loader) loader.style.display = 'flex';
       try {
         var liveData = await buildDataFromSheet();
         Object.assign(DATA, liveData);
         showStatus('✓ Live data loaded from Google Sheets — ' + new Date().toLocaleTimeString(), '#36453D');
-        console.log('[MGH Test] Live data loaded from Google Sheets OK');
       } catch(err) {
         showStatus('⚠ Could not reach Google Sheet — showing fallback data. Error: ' + err.message, '#AC3939');
-        console.warn('[MGH Test] Sheet fetch failed — using fallback data.', err);
-      } finally {
-        if (loader) loader.style.display = 'none';
       }
       renderDashboard();
     }
 
-    // ================================================================
-    // RENDER
-    // ================================================================
     function renderDashboard() {
       const d = DATA;
-
       document.getElementById('dash-period').textContent = '(' + d.period + ')';
-
-      // ── KPI Cards ──
       document.getElementById('kpi-grid').innerHTML = d.kpi.map(card => `
         <div class="kpi-card">
           <div class="kpi-card-title">${card.title}</div>
@@ -846,67 +581,44 @@
                   <span class="kpi-value${r.value === 'NA' ? ' na' : ''}">${fmtNum(r.value)}</span>
                   ${trend(r.pct)}
                 </div>
-              </div>
-            `).join('')}
+              </div>`).join('')}
           </div>
-          ${card.insights ? `
-            <div class="key-insights">
-              <span class="key-insights-label">${card.insights.label}</span>
-              ${card.insights.text}
-            </div>
-          ` : ''}
-        </div>
-      `).join('');
+          ${card.insights ? `<div class="key-insights"><span class="key-insights-label">${card.insights.label}</span>${card.insights.text}</div>` : ''}
+        </div>`).join('');
 
-      // ── Showhome ──
       document.getElementById('showhome-title').textContent  = d.showhomeRegion + ' — Showhome visits';
       document.getElementById('showhome-footer').textContent = d.showhomeFooter;
       document.getElementById('showhome-grid').innerHTML = d.showhomes.map(s => `
         <div class="showhome-cell${!s.location ? ' showhome-cell--empty' : ''}">
           <div class="showhome-location">${s.location}</div>
           <div class="showhome-count">${s.visits !== null ? s.visits : ''}</div>
-        </div>
-      `).join('');
+        </div>`).join('');
 
-      // ── Budget ──
       document.getElementById('budget-month-title').textContent = d.budgetMonth;
       document.getElementById('budget-actual-row').innerHTML = d.budgetActual.map(c => `
         <div class="budget-cell">
-          <div class="budget-cell-text">
-            <div class="budget-label">${c.label}</div>
-            <div class="budget-sublabel">${c.sub}</div>
-          </div>
+          <div class="budget-cell-text"><div class="budget-label">${c.label}</div><div class="budget-sublabel">${c.sub}</div></div>
           <div class="budget-value${c.dim ? ' dim' : ''}">${fmtNum(c.value)}</div>
-        </div>
-      `).join('');
+        </div>`).join('');
       document.getElementById('budget-planned-row').innerHTML = d.budgetPlanned.map(c => `
         <div class="budget-cell">
-          <div class="budget-cell-text">
-            <div class="budget-label">${c.label}</div>
-            <div class="budget-sublabel">${c.sub}</div>
-          </div>
+          <div class="budget-cell-text"><div class="budget-label">${c.label}</div><div class="budget-sublabel">${c.sub}</div></div>
           <div class="budget-value${c.dim ? ' dim' : ''}">${fmtNum(c.value)}</div>
-        </div>
-      `).join('');
+        </div>`).join('');
       document.getElementById('budget-ytd-current').innerHTML = d.budgetYTDCurrent.map(c => `
         <div class="budget-ytd-cell">
           <div class="budget-ytd-label">${c.label.replace(/\n/g,'<br>')}</div>
           <div class="budget-ytd-value${c.dim ? ' dim' : ''}">${fmtNum(c.value)}</div>
-        </div>
-      `).join('');
+        </div>`).join('');
       document.getElementById('budget-ytd-prev').innerHTML = d.budgetYTDPrev.map(c => `
         <div class="budget-ytd-cell">
           <div class="budget-ytd-label">${c.label.replace(/\n/g,'<br>')}</div>
           <div class="budget-ytd-value dim">${c.value}</div>
-        </div>
-      `).join('');
+        </div>`).join('');
 
-      // ── Lead Cycle ──
-      // 3-column bottom rule matching the lead grid columns
       document.getElementById('lead-updated').innerHTML =
         `<div class="lead-updated-cell">${d.leadUpdated}</div>` +
-        `<div class="lead-updated-cell"></div>` +
-        `<div class="lead-updated-cell"></div>`;
+        `<div class="lead-updated-cell"></div><div class="lead-updated-cell"></div>`;
       document.getElementById('lead-grid').innerHTML = d.leadCycle.map(l => `
         <div class="lead-cell">
           <div class="lead-cell-left">
@@ -917,10 +629,8 @@
             <div class="lead-value">${l.days} days</div>
             ${trend(l.pct, true)}
           </div>
-        </div>
-      `).join('');
+        </div>`).join('');
 
-      // ── Sticky Stock ──
       document.getElementById('sticky-title').textContent   = d.stickyMonth;
       document.getElementById('sticky-updated').textContent = d.stickyUpdated;
       document.getElementById('sticky-grid').innerHTML = d.stickyStock.map(s => `
@@ -928,12 +638,8 @@
           <div class="sticky-label">${s.label}</div>
           <div class="sticky-value">${fmtNum(s.value)}</div>
           <div class="sticky-action-label">Action:</div>
-          <div class="sticky-action">
-            <span class="sticky-arrow">→</span>
-            <span>${s.action}</span>
-          </div>
-        </div>
-      `).join('');
+          <div class="sticky-action"><span class="sticky-arrow">→</span><span>${s.action}</span></div>
+        </div>`).join('');
     }
   </script>
 </body>
