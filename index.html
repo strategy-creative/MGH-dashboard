@@ -27,7 +27,8 @@
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body { height: 100%; font-family: var(--font); background: var(--white); }
+    html, body { height: 100%; font-family: var(--font); background: var(--white); overflow-x: hidden; }
+    img, video, iframe, table { max-width: 100%; }
 
     /* ============================================================
        PASSWORD GATE
